@@ -23,7 +23,7 @@
 
 <script setup>
 import user from '@/assets/users-images/user1.png';
-import video from '@/assets/icons/Video-icon.svg';
+import video from '@/assets/icons/video-icon.svg';
 import call from '@/assets/icons/call-icon.svg';
 import ai from '@/assets/icons/ai-icon.svg';
 import info from '@/assets/icons/info-icon.svg';
