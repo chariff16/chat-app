@@ -8,7 +8,7 @@ const routes = [
     },
     {
         path: '/message/:id',
-        name: 'About',
+        name: 'message',
         component: () => import('@/components/Messages/MessagesBody.vue'),
     }
 ];
