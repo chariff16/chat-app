@@ -5,6 +5,7 @@ import { fileURLToPath, URL } from "url";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/',
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -14,7 +15,6 @@ export default defineConfig({
     vue(),
     tailwindcss(),
   ],
-  base: '/',
   build: {
     outDir: 'dist',
   },
