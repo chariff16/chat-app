@@ -12,7 +12,7 @@
     },
     {
         "id": 1,
-        "userId": 1,
+        "userId": 2,
         "name": "Ahmad Salama",
         "isOnline": false,
         "lastMessage": "Hey, how are you?",

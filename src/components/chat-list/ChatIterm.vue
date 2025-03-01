@@ -1,5 +1,5 @@
 <template>
-    <RouterLink :to="`/message/${props.data.messageID}`">
+    <RouterLink :to="`/message/${props.data.userId}`">
         <div class="h-[4.5rem] flex gap-3  px-4 py-3 cursor-pointer"
             :class="selected ? 'bg-[#E8E8E8]' : 'hover:bg-[#E8E8E8]'">
             <div class=" h-[3rem] w-[3rem] rounded-full relative bg-cover bg-center bg-no-repeat"
