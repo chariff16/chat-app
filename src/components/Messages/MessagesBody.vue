@@ -12,7 +12,7 @@
 import MessageHeader from '@/components/Messages/MessageHeader.vue';
 import InputFiled from '@/components/Messages/InputFiled.vue';
 import { useRoute, useRouter } from 'vue-router';
-import Chat from './Chat.vue';
+import Chat from './MessagesList.vue';
 
 
 

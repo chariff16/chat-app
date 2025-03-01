@@ -17,6 +17,13 @@
                 "type": "text",
                 "sender": "Me",
                 "receiver": true
+            },
+            {
+                "content": "/chatImage/chatImage1.png",
+                "timestamp": "10:10",
+                "type": "image",
+                "sender": "Dani Rokhass",
+                "receiver": true
             }
         ]
     },
