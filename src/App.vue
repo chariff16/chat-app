@@ -1,5 +1,5 @@
 <template>
-  <section class="flex font-[Roboto]">
+  <section class="flex font-roboto">
     <ChatList class="w-[26.25rem]" />
     <Messages />
   </section>

@@ -10,6 +10,9 @@ const routes = [
         path: '/message/:id',
         name: 'message',
         component: () => import('@/components/Messages/MessagesBody.vue'),
+        props: (route) => ({
+            id: route.params.id,
+        }),
     }
 ];
 
