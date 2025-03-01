@@ -1,7 +1,7 @@
 <template>
     <aside class="h-screen overflow-y-auto">
         <div class="w-full h-[4rem] px-4 flex justify-between items-center">
-            <h2 class="font-bold">
+            <h2 class="font-bold cursor-pointer" @click="goHome">
                 Chats
             </h2>
             <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -14,8 +14,10 @@
 <script setup>
 import ChatIterm from '@/components/chat-list/ChatIterm.vue';
 import UsersList from '@/assets/data/users.json';
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 
 const userSelected = ref(null);
 const selecteUser = (index) => {
@@ -23,7 +25,18 @@ const selecteUser = (index) => {
 }
 
 const isSelected = (index) => {
-    return index === userSelected.value;
+    if (index != null) {
+        return index === userSelected.value;
+    } else {
+        return false;
+    }
+}
+
+const goHome = () => {
+    // navigate to home page
+    selecteUser(null);
+    isSelected(null);
+    router.push('/');
 }
 </script>
 
