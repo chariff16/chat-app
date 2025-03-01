@@ -1,6 +1,7 @@
 <template>
     <RouterLink :to="`/message/${props.data.messageID}`">
-        <div class="h-[4.5rem] flex gap-3 bg-[#E8E8E8] px-4 py-3 cursor-pointer">
+        <div class="h-[4.5rem] flex gap-3  px-4 py-3 cursor-pointer"
+            :class="selected ? 'bg-[#E8E8E8]' : 'hover:bg-[#E8E8E8]'">
             <div class=" h-[3rem] w-[3rem] rounded-full relative bg-cover bg-center bg-no-repeat"
                 :style="`background-image : url('${props.data.profilePic}')`">
                 <div v-if="props.data.isOnline"
@@ -32,6 +33,10 @@ const props = defineProps(
         data: {
             type: Object
         },
+        selected: {
+            type: Boolean,
+            default: false
+        }
     },
 );
 

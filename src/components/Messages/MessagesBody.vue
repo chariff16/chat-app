@@ -21,8 +21,11 @@ const route = useRoute();
 const router = useRouter();
 
 
+
+
 console.log('route param :', route.params.id);
-console.log('this is the messages', messages);
+console.log('this is the messages', messages[route.params.id]);
+// Object.keys(messages)
 
 
 

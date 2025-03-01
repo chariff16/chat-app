@@ -2,7 +2,7 @@
     {
         "id": 1,
         "userId": 1,
-        "name": "John Doe",
+        "name": "Dani Rokhass",
         "isOnline": true,
         "lastMessage": "Hey, how are you?",
         "lastMessageTime": "15:30",
@@ -13,12 +13,12 @@
     {
         "id": 1,
         "userId": 1,
-        "name": "salam",
-        "isOnline": true,
+        "name": "Ahmad Salama",
+        "isOnline": false,
         "lastMessage": "Hey, how are you?",
         "lastMessageTime": "15:30",
         "unReadMessages": 2,
-        "profilePic": "/users-images/user1.png",
+        "profilePic": "/users-images/user2.png",
         "messageID": 2
     }
 ]
