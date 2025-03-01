@@ -1,0 +1,14 @@
+{
+    "1": {
+        "username": "Charif",
+        "message": [
+            {
+                "content": "Hello, how are you today?",
+                "timestamp": "2022-01-01 10:00",
+                "type": "text",
+                "sender": "Charif",
+                "receiver": true
+            }
+        ]
+    }
+}

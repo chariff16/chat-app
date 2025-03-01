@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "userId": 1,
+        "name": "John Doe",
+        "isOnline": true,
+        "lastMessage": "Hey, how are you?",
+        "lastMessageTime": "15:30",
+        "unReadMessages": 2,
+        "profilePic": "/users-images/user1.png",
+        "messageID": 1
+    },
+    {
+        "id": 1,
+        "userId": 1,
+        "name": "salam",
+        "isOnline": true,
+        "lastMessage": "Hey, how are you?",
+        "lastMessageTime": "15:30",
+        "unReadMessages": 2,
+        "profilePic": "/users-images/user1.png",
+        "messageID": 2
+    }
+]

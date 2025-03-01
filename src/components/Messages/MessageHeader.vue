@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import user from '@/assets/users-images/user1.png';
+import user from '/users-images/user1.png';
 import video from '@/assets/icons/video-icon.svg';
 import call from '@/assets/icons/call-icon.svg';
 import ai from '@/assets/icons/ai-icon.svg';

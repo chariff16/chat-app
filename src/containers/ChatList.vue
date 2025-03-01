@@ -6,12 +6,13 @@
             </h2>
             <i class="fa-solid fa-ellipsis-vertical"></i>
         </div>
-        <ChatIterm />
+        <ChatIterm v-for="person in UsersList" :data="person" />
     </aside>
 </template>
 
 <script setup>
 import ChatIterm from '@/components/chat-list/ChatIterm.vue';
+import UsersList from '@/assets/data/users.json';
 </script>
 
 <style scoped></style>

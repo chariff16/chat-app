@@ -1,22 +1,23 @@
 <template>
-    <RouterLink to='/message/1'>
+    <RouterLink :to="`/message/${props.data.messageID}`">
         <div class="h-[4.5rem] flex gap-3 bg-[#E8E8E8] px-4 py-3 cursor-pointer">
             <div class=" h-[3rem] w-[3rem] rounded-full relative bg-cover bg-center bg-no-repeat"
-                :style="`background-image : url('${user}')`">
-                <div class="bg-green-400 h-3 w-3 rounded-full absolute right-0 bottom-0 border-white border-[2px]">
+                :style="`background-image : url('${props.data.profilePic}')`">
+                <div v-if="props.data.isOnline"
+                    class="bg-green-400 h-3 w-3 rounded-full absolute right-0 bottom-0 border-white border-[2px]">
                 </div>
             </div>
             <div class="flex flex-col grow">
                 <div class="flex justify-between items-center">
                     <p class="font-medium">
-                        George Alan
+                        {{ props.data.name }}
                     </p>
                     <p class="text-[0.75rem] text-[#727272]">
-                        12:12 PM
+                        {{ props.data.lastMessageTime }}
                     </p>
                 </div>
                 <p class="text-gray-400 text-[0.875rem]">
-                    last message
+                    {{ props.data.lastMessage }}
                 </p>
             </div>
         </div>
@@ -25,7 +26,17 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
-import user from '@/assets/users-images/user1.png';
+
+const props = defineProps(
+    {
+        data: {
+            type: Object
+        },
+    },
+);
+
+// console.log(props.data);
+
 </script>
 
 <style lang="scss" scoped></style>
