@@ -3,7 +3,20 @@
         <MessageHeader />
         <!-- <MessageBody class="grow" /> -->
         <div class="h-div">
-
+            <div v-for="msg in messages[route.params.id].message" class="flex"
+                :class="msg.sender === messages[route.params.id].name ? 'justify-start' : ' justify-end'">
+                <div class=" p-1 w-fit rounded-xl"
+                    :class="msg.sender === messages[route.params.id].name ? 'bg-[#E8E8E8]' : ' bg-[#6852D6] text-white'">
+                    <div class="p-2">
+                        <p class="">
+                            {{ msg.content }}
+                        </p>
+                        <p class="text-sm  text-[0.625rem] text-end mt-1">
+                            {{ msg.timestamp }}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <InputFiled />
     </div>
@@ -38,6 +51,7 @@ console.log('this is the messages', messages[route.params.id]);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    gap: 1rem;
     padding: 0 1rem;
 }
 </style>

@@ -6,9 +6,16 @@
         "message": [
             {
                 "content": "Hello, how are you today?",
-                "timestamp": "2022-01-01 10:00",
+                "timestamp": "10:00",
                 "type": "text",
                 "sender": "Dani Rokhass",
+                "receiver": true
+            },
+            {
+                "content": "I am doing good ! How about you?",
+                "timestamp": "10:01",
+                "type": "text",
+                "sender": "Me",
                 "receiver": true
             }
         ]
@@ -19,8 +26,15 @@
         "profilePic": "/users-images/user2.png",
         "message": [
             {
-                "content": "Hello, how are you today?",
-                "timestamp": "2022-01-01 10:00",
+                "content": "Hello,my name is charif. How are you today?",
+                "timestamp": "10:00",
+                "type": "text",
+                "sender": "Me",
+                "receiver": true
+            },
+            {
+                "content": "Hello charif i am doing good ,my name is Ahmad. How are you today?",
+                "timestamp": "10:00",
                 "type": "text",
                 "sender": "Ahmad Salama",
                 "receiver": true
