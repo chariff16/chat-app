@@ -21,6 +21,7 @@
             {
                 "content": "/chatImage/chatImage1.png",
                 "timestamp": "10:10",
+                "datestamp": "12/12/2022",
                 "type": "image",
                 "sender": "Dani Rokhass",
                 "receiver": true
