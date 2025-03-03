@@ -42,9 +42,16 @@
             },
             {
                 "content": "Hello charif i am doing good ,my name is Ahmad. How are you today?",
-                "timestamp": "10:00",
+                "timestamp": "10:01",
                 "type": "text",
                 "sender": "Ahmad Salama",
+                "receiver": true
+            },
+            {
+                "content": "/chatVideo/video1.mp4",
+                "timestamp": "10:25",
+                "type": "video",
+                "sender": "Me",
                 "receiver": true
             }
         ]

@@ -36,9 +36,16 @@
                 </p>
             </div>
         </div>
-        <div v-if="msg.type === 'image'" class="p-1 w-fit rounded-xl"
+        <div v-if="msg.type === 'image'" class="p-1  max-w-[80%] rounded-xl"
             :class="msg.sender === props.senderName ? 'bg-[#E8E8E8]' : ' bg-[#6852D6] text-white'">
             <img :src="msg.content" alt="" class="rounded-xl cursor-pointer" @click="setSelectedImage(msg)">
+            <p class="text-sm  text-[0.625rem] text-end mt-1">
+                {{ msg.timestamp }}
+            </p>
+        </div>
+        <div v-if="msg.type === 'video'" class="p-1  max-w-[80%] rounded-xl"
+            :class="msg.sender === props.senderName ? 'bg-[#E8E8E8]' : ' bg-[#6852D6] text-white'">
+            <video :src="msg.content" controls class="max-w-[16rem]"></video>
             <p class="text-sm  text-[0.625rem] text-end mt-1">
                 {{ msg.timestamp }}
             </p>
