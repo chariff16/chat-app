@@ -53,6 +53,13 @@
                 "type": "video",
                 "sender": "Me",
                 "receiver": true
+            },
+            {
+                "content": "what do you think ?",
+                "timestamp": "10:30",
+                "type": "text",
+                "sender": "Me",
+                "receiver": true
             }
         ]
     }
