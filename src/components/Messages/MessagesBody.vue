@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col bg-[#F5F5F5]">
+    <div class="flex flex-col bg-[#F5F5F5] w-full">
         <MessageHeader />
         <div class="h-div">
             <MessagesList :messagesList="messagesList" :senderName="sendName" :userInfo="userInfo" />
