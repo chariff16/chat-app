@@ -4,8 +4,8 @@
         "userId": 1,
         "name": "Dani Rokhass",
         "isOnline": true,
-        "lastMessage": "Hey, how are you?",
-        "lastMessageTime": "15:30",
+        "lastMessage": "image",
+        "lastMessageTime": "10:10",
         "unReadMessages": 2,
         "profilePic": "/users-images/user1.png",
         "messageID": 1
@@ -15,8 +15,8 @@
         "userId": 2,
         "name": "Ahmad Salama",
         "isOnline": false,
-        "lastMessage": "Hey, how are you?",
-        "lastMessageTime": "15:30",
+        "lastMessage": "what do you think ?",
+        "lastMessageTime": "10:30",
         "unReadMessages": 2,
         "profilePic": "/users-images/user2.png",
         "messageID": 2
