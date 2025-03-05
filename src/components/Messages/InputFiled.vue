@@ -4,10 +4,10 @@
             class="w-full px-2 h-[2.5625rem] p-3 bg-white rounded-t-lg outline-none" placeholder="Type your message...">
         <div class="h-12 py-2 px-3 flex justify-between bg-white rounded-b-lg">
             <div class="flex gap-4">
-                <img :src="add" alt="">
+                <!-- <img :src="add" alt="">
                 <img :src="mic" alt="">
                 <img :src="emoji" alt="">
-                <img :src="gif" alt="">
+                <img :src="gif" alt=""> -->
             </div>
             <div @click="sendMessage" class="h-8 w-8 rounded-full flex justify-center items-center cursor-pointer"
                 :class="hasText ? 'bg-[#6852D6]' : 'bg-[#E8E8E8]'">
@@ -19,10 +19,10 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-import add from '@/assets/icons/add.svg';
-import mic from '@/assets/icons/mic.svg';
-import emoji from '@/assets/icons/emoji.svg';
-import gif from '@/assets/icons/gif.svg';
+// import add from '@/assets/icons/add.svg';
+// import mic from '@/assets/icons/mic.svg';
+// import emoji from '@/assets/icons/emoji.svg';
+// import gif from '@/assets/icons/gif.svg';
 import send from '@/assets/icons/send.svg';
 
 const messageText = ref('');

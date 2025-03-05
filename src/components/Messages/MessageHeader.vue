@@ -12,19 +12,18 @@
                 </p>
             </div>
         </div>
-        <div class="flex gap-4">
+        <!-- <div class="flex gap-4">
             <img :src="video" alt="">
             <img :src="call" alt="">
             <img :src="ai" alt="">
             <img :src="info" alt="">
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script setup>
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 import messages from '@/assets/data/messages.json';
-import user from '/users-images/user1.png';
 import video from '@/assets/icons/video-icon.svg';
 import call from '@/assets/icons/call-icon.svg';
 import ai from '@/assets/icons/ai-icon.svg';
@@ -32,7 +31,6 @@ import info from '@/assets/icons/info-icon.svg';
 import { computed } from 'vue';
 
 const route = useRoute();
-const router = useRouter();
 
 const User = computed(() => {
     return messages[route.params.id];
