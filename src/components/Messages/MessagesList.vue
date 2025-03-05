@@ -1,7 +1,7 @@
 <template>
     <Teleport to="body">
         <div v-if="imageModalStatus" class="fixed top-0 left-0 w-screen h-screen z-50 bg-[#141414bd] backdrop-blur-xs">
-            <div class="h-full">
+            <div class="h-full flex flex-col">
                 <div class="flex justify-between items-center px-[5%]">
                     <div class="flex gap-2">
                         <div class="h-[3rem] w-[3rem] rounded-full relative bg-cover bg-center bg-no-repeat"
@@ -20,8 +20,8 @@
                             @click="closeImageModal"></i>
                     </div>
                 </div>
-                <div class="w-full h-full flex justify-center items-center">
-                    <img ref="imgTarget" :src="selectedImage.content" alt="">
+                <div class="grow flex justify-center items-center">
+                    <img ref="imgTarget" :src="selectedImage.content" alt="" class="h-full">
                 </div>
             </div>
         </div>
