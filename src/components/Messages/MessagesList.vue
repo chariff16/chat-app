@@ -1,25 +1,28 @@
 <template>
     <Teleport to="body">
         <div v-if="imageModalStatus" class="fixed top-0 left-0 w-screen h-screen z-50 bg-[#141414bd] backdrop-blur-xs">
-            <div class="flex justify-between items-center px-[5%]">
-                <div class="flex gap-2">
-                    <div class="h-[3rem] w-[3rem] rounded-full relative bg-cover bg-center bg-no-repeat"
-                        :style="`background-image : url('${props.userInfo.profilePic}')`"></div>
-                    <div class="text-white">
-                        <p class="font-medium">
-                            {{ props.userInfo.name }}
-                        </p>
-                        <p class="text-[#A1A1A1] text-[0.75rem]">
-                            {{ selectedImage.datestamp }} at {{ selectedImage.timestamp }}
-                        </p>
+            <div class="h-full">
+                <div class="flex justify-between items-center px-[5%]">
+                    <div class="flex gap-2">
+                        <div class="h-[3rem] w-[3rem] rounded-full relative bg-cover bg-center bg-no-repeat"
+                            :style="`background-image : url('${props.userInfo.profilePic}')`"></div>
+                        <div class="text-white">
+                            <p class="font-medium">
+                                {{ props.userInfo.name }}
+                            </p>
+                            <p class="text-[#A1A1A1] text-[0.75rem]">
+                                {{ selectedImage.datestamp }} at {{ selectedImage.timestamp }}
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark text-white text-[1.25rem] cursor-pointer"
+                            @click="closeImageModal"></i>
                     </div>
                 </div>
-                <div>
-                    <i class="fa-solid fa-xmark text-white text-[1.25rem] cursor-pointer" @click="closeImageModal"></i>
+                <div class="w-full h-full flex justify-center items-center">
+                    <img ref="imgTarget" :src="selectedImage.content" alt="">
                 </div>
-            </div>
-            <div class="w-full h-full flex justify-center items-center">
-                <img :src="selectedImage.content" alt="">
             </div>
         </div>
     </Teleport>
@@ -57,7 +60,11 @@
 </template>
 
 <script setup>
+import { onClickOutside } from '@vueuse/core';
 import { ref, watch, nextTick, onMounted } from 'vue';
+
+
+const imgTarget = ref(null);
 
 const props = defineProps({
     messagesList: {
@@ -82,6 +89,10 @@ const setSelectedImage = (image) => {
     imageModalStatus.value = true;
     selectedImage.value = image;
 };
+
+onClickOutside(imgTarget, () => {
+    closeImageModal();
+})
 
 const closeImageModal = () => {
     imageModalStatus.value = false;
