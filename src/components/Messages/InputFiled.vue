@@ -9,8 +9,8 @@
                 <img :src="emoji" alt="">
                 <img :src="gif" alt="">
             </div>
-            <div @click="sendMessage"
-                class="h-8 w-8 rounded-full bg-[#E8E8E8] hover:bg-[#6852D6] flex justify-center items-center cursor-pointer">
+            <div @click="sendMessage" class="h-8 w-8 rounded-full flex justify-center items-center cursor-pointer"
+                :class="hasText ? 'bg-[#6852D6]' : 'bg-[#E8E8E8]'">
                 <img :src="send" alt="">
             </div>
         </div>
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import add from '@/assets/icons/add.svg';
 import mic from '@/assets/icons/mic.svg';
 import emoji from '@/assets/icons/emoji.svg';
@@ -26,6 +26,10 @@ import gif from '@/assets/icons/gif.svg';
 import send from '@/assets/icons/send.svg';
 
 const messageText = ref('');
+
+const hasText = computed(() => {
+    return messageText.value.length > 0
+});
 
 const emit = defineEmits(['send']);
 
