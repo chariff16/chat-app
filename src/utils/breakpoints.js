@@ -1,5 +1,4 @@
 import { useBreakpoints } from "@vueuse/core";
-import { computed } from "vue";
 
 export const useAppBreakpoints = () => {
     const breakpoints = useBreakpoints({

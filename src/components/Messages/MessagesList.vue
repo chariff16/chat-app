@@ -1,6 +1,6 @@
 <template>
     <Teleport to="body">
-        <div v-if="imageModalStatus" class="fixed top-0 left-0 w-screen h-screen z-50 bg-[#141414]/80 backdrop-blur-xs">
+        <div v-if="imageModalStatus" class="fixed top-0 left-0 w-screen h-screen z-50 bg-[#141414bd] backdrop-blur-xs">
             <div class="flex justify-between items-center px-[5%]">
                 <div class="flex gap-2">
                     <div class="h-[3rem] w-[3rem] rounded-full relative bg-cover bg-center bg-no-repeat"
@@ -23,7 +23,6 @@
             </div>
         </div>
     </Teleport>
-
     <!-- Container for messages -->
     <div ref="messagesContainer" class="overflow-y-auto h-full">
         <div v-for="msg in props.messagesList" :key="msg.id" class="flex my-2"
