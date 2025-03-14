@@ -4,8 +4,12 @@
             class="w-full px-2 h-[2.5625rem] p-3 bg-white rounded-t-lg outline-none" placeholder="Type your message...">
         <div class="h-12 py-2 px-3 flex justify-between bg-white rounded-b-lg">
             <div class="flex gap-4">
-                <!-- <img :src="add" alt="">
-                <img :src="mic" alt="">
+                <!-- Add Image Button -->
+                <img :src="add" alt="" @click="triggerFileInput" class="cursor-pointer">
+                <!-- Hidden File Input -->
+                <input type="file" ref="fileInput" @change="handleFileSelect" accept="image/*, video/*"
+                    style="display: none;">
+                <!-- <img :src="mic" alt="">
                 <img :src="emoji" alt="">
                 <img :src="gif" alt=""> -->
             </div>
@@ -19,19 +23,17 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-// import add from '@/assets/icons/add.svg';
-// import mic from '@/assets/icons/mic.svg';
-// import emoji from '@/assets/icons/emoji.svg';
-// import gif from '@/assets/icons/gif.svg';
 import send from '@/assets/icons/send.svg';
+import add from '@/assets/icons/add.svg'; // Import the add icon
 
 const messageText = ref('');
+const fileInput = ref(null); // Reference to the file input element
 
 const hasText = computed(() => {
     return messageText.value.length > 0
 });
 
-const emit = defineEmits(['send']);
+const emit = defineEmits(['send', 'file-selected']); // Add 'file-selected' event
 
 const sendMessage = () => {
     if (messageText.value.trim()) {
@@ -39,6 +41,18 @@ const sendMessage = () => {
         messageText.value = ''; // Clear the input field
     }
 };
-</script>
 
-<style lang="scss" scoped></style>
+// Function to trigger the file input
+const triggerFileInput = () => {
+    fileInput.value.click(); // Programmatically click the hidden file input
+};
+
+// Function to handle file selection
+const handleFileSelect = (event) => {
+    const file = event.target.files[0]; // Get the selected file
+    if (file) {
+        const fileType = file.type.split('/')[0]; // Get the file type (image or video)
+        emit('file-selected', { file, type: fileType }); // Emit the file and its type
+    }
+};
+</script>

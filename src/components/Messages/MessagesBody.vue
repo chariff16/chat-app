@@ -4,7 +4,7 @@
         <div class="h-div">
             <MessagesList :messagesList="messagesList" :senderName="sendName" :userInfo="userInfo" />
         </div>
-        <InputFiled @send="handleSendMessage" />
+        <InputFiled @send="handleSendMessage" @file-selected="handleFile" />
     </div>
 </template>
 
@@ -46,6 +46,41 @@ const handleSendMessage = (messageContent) => {
 
     // Log the updated messages (optional)
     console.log(messages.value[route.params.id].message);
+};
+
+const handleFile = (data) => {
+    // console.log('data :', data);
+    let newMessage = {};
+    let valid = false;
+    if (data.type == 'video') {
+        // console.log('this is a video');
+        newMessage = {
+            content: '/chatVideo/video1.mp4',
+            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),
+            type: 'video',
+            sender: 'Me',
+            receiver: true
+        };
+        valid = true;
+    } else if (data.type == 'image') {
+        // console.log('this is a image');
+        newMessage = {
+            content: '/chatImage/chatImage1.png',
+            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),
+            type: 'image',
+            sender: 'Me',
+            receiver: true
+        };
+        valid = true;
+    } else {
+        valid = false;
+    }
+    if (valid) {
+        messages.value[route.params.id].message.push(newMessage);
+        // console.log(messages.value[route.params.id].message);
+    } else {
+        alert('Invalid file type');
+    }
 };
 </script>
 
