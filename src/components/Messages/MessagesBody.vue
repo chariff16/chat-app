@@ -48,39 +48,23 @@ const handleSendMessage = (messageContent) => {
     console.log(messages.value[route.params.id].message);
 };
 
-const handleFile = (data) => {
-    // console.log('data :', data);
-    let newMessage = {};
-    let valid = false;
-    if (data.type == 'video') {
-        // console.log('this is a video');
-        newMessage = {
-            content: '/chatVideo/video1.mp4',
-            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),
-            type: 'video',
-            sender: 'Me',
-            receiver: true
-        };
-        valid = true;
-    } else if (data.type == 'image') {
-        // console.log('this is a image');
-        newMessage = {
-            content: '/chatImage/chatImage1.png',
-            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),
-            type: 'image',
-            sender: 'Me',
-            receiver: true
-        };
-        valid = true;
-    } else {
-        valid = false;
-    }
-    if (valid) {
-        messages.value[route.params.id].message.push(newMessage);
-        // console.log(messages.value[route.params.id].message);
-    } else {
-        alert('Invalid file type');
-    }
+const handleFile = (date) => {
+    // console.log('data :', date);
+    const reader = new FileReader();
+    reader.readAsDataURL(date);
+    reader.onload = (e) => {
+        const mediaUrl = e.target.result;
+        // console.log('e', e.srcElement.result);
+        // console.log('e.target', e.target);
+        // console.log('mediaUrl', mediaUrl);
+        messages.value[route.params.id].message.push({
+            content: mediaUrl,
+            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+            type: date.type.startsWith("image/") ? "image" : "video",
+            sender: "Me",
+            receiver: true,
+        });
+    };
 };
 </script>
 

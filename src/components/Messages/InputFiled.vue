@@ -52,7 +52,7 @@ const handleFileSelect = (event) => {
     const file = event.target.files[0]; // Get the selected file
     if (file) {
         const fileType = file.type.split('/')[0]; // Get the file type (image or video)
-        emit('file-selected', { file, type: fileType }); // Emit the file and its type
+        emit('file-selected', file); // Emit the file and its type
     }
 };
 </script>
